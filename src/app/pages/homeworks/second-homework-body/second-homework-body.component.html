@@ -1,0 +1,39 @@
+<div class="card">
+    <img *ngIf="gender == 'M'; else otherImage" class="card-img-top" src="assets/img/MaleUser.svg" alt="Card image cap">
+    <ng-template #otherImage>
+        <img  class="card-img-top" src="assets/img/FemaleUser.svg" alt="Card image cap">
+    </ng-template>
+    <div class="card-body">
+        <div class="text-center">
+            <h5>
+                <strong>
+                    {{firstName}} {{lastName}}
+                </strong>
+                
+            </h5>
+            <h6>{{jobTitle}}</h6>
+            <br>
+            <h6>
+                <strong>Género: </strong>
+                {{gender}}
+            </h6>
+            
+        </div>
+        <hr>
+        <div class="text-center row justify-content-center align-items-center">
+            <div class="col">
+                <h6>
+                    <strong>Código: </strong> 
+                    {{id}}
+                </h6>
+            </div>
+            <div class="col">
+                <button class="btn btn-danger rounded-pill border-2 border-white text-white" (click)="sendDelete(this.id)">
+                    <i class="fa-solid fa-trash-can"></i>
+                  
+                </button>
+            </div>
+            
+        </div>  
+    </div>
+</div>

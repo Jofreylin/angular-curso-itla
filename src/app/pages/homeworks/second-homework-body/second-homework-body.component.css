@@ -1,0 +1,8 @@
+.card{
+    min-height: 555px;
+}
+
+.card, .card-body, .card-header, .card-footer{
+    background-color: #E29578;
+}
+

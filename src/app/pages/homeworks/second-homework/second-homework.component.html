@@ -1,0 +1,88 @@
+<div class="container py-5">
+    <div class="row py-3">
+        <div class="col-12 text-center">
+            <h3>
+                <strong>Tarea #2 - Listado de Personas</strong>
+            </h3>
+        </div>
+    </div>
+    <div class="row py-3">
+        <div class="col-12">
+            <h4>
+                <strong>Actividad:</strong>
+            </h4>
+            <p>Mostrar un listado de personas en donde cada elemento contenga la opción de eliminar.</p>
+
+            <br>
+
+            <h4>
+                <strong>Objetivos:</strong>
+            </h4>
+            <ul>
+                <li>
+                    <p>
+                        Practicar la creación de componentes.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Utilizar las directivas estructurales de Angular (*ngIf, *ngFor, etc.).
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Practicar One-Way Binding y Two-Way Binding.
+                    </p>
+                </li>
+
+            </ul>
+        </div>
+        <hr>
+        <div class="col-md-12 py-4">
+            <h4><strong>Desarrollo</strong></h4>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="searchInput" class="form-label">Buscar</label>
+                        <input id="searchInput" type="text" class="form-control" placeholder="Jofreylin Perez..."
+                            [(ngModel)]="searchKey" (input)="searchOn()">
+
+                    </div>
+
+                </div>
+                <div class="col-md-4 col-lg-3 py-3" *ngFor="let item of dataFiltered; let i = index">
+                    <app-second-homework-body [id]="item.id" [firstName]="item.first_name" [lastName]="item.last_name"
+                        [gender]="item.gender" [jobTitle]="item.job_title" (deleteEmitter)="deleteItem($event)">
+                    </app-second-homework-body>
+                </div>
+            </div>
+            <br>
+
+            <div class="py-5">
+
+                <h5><strong>HTML</strong></h5>
+                <pre>
+                    <code [highlight]="htmlCode" ></code>
+                </pre>
+
+
+                <h5><strong>TS</strong></h5>
+                <pre>
+                    <code [highlight]="tsCode"></code>
+                </pre>
+
+
+                <h5><strong>HTML - Componente Padre</strong></h5>
+                <pre>
+                    <code [highlight]="fatherHtmlCode"></code>
+                </pre>
+
+                <h5><strong>TS - Componente Padre</strong></h5>
+                <pre>
+                    <code [highlight]="fatherTsCode"></code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
